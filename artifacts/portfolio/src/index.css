@@ -220,3 +220,8 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+@keyframes scanline {
+  0% { top: -2px; }
+  100% { top: 100%; }
+}

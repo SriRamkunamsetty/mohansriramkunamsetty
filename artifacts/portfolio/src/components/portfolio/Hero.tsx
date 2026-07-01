@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import portraitImg from "@assets/IMG_20260615_211732_1782913779035.png";
 import { Terminal } from "lucide-react";
+import * as THREE from "three";
 
 const stats = [
   { value: 6, suffix: "+", label: "Projects Filed for Patent" },
@@ -20,7 +21,6 @@ function AnimatedCounter({ value, prefix = "", suffix = "" }: { value: number; p
       let start = 0;
       const duration = 2000;
       const increment = value / (duration / 16);
-      
       const timer = setInterval(() => {
         start += increment;
         if (start >= value) {
@@ -39,6 +39,7 @@ function AnimatedCounter({ value, prefix = "", suffix = "" }: { value: number; p
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const threeCanvasRef = useRef<HTMLDivElement>(null);
   const [statusIdx, setStatusIdx] = useState(0);
   const statuses = ["THINKING...", "PLANNING...", "EXECUTING...", "DEPLOYING..."];
 
@@ -49,6 +50,7 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  // Neural network canvas (2D)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -56,8 +58,8 @@ export default function Hero() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
 
     const resize = () => {
       width = canvas.width = window.innerWidth;
@@ -65,7 +67,7 @@ export default function Hero() {
     };
     window.addEventListener("resize", resize);
 
-    const nodes = Array.from({ length: 50 }, () => ({
+    const nodes = Array.from({ length: 55 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.5,
@@ -74,16 +76,14 @@ export default function Hero() {
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "rgba(0, 255, 255, 0.5)"; // cyan
-      ctx.strokeStyle = "rgba(0, 255, 255, 0.1)";
+      ctx.fillStyle = "rgba(0, 255, 255, 0.55)";
+      ctx.strokeStyle = "rgba(0, 255, 255, 0.08)";
 
       nodes.forEach((node) => {
         node.x += node.vx;
         node.y += node.vy;
-
         if (node.x < 0 || node.x > width) node.vx *= -1;
         if (node.y < 0 || node.y > height) node.vy *= -1;
-
         ctx.beginPath();
         ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -94,8 +94,8 @@ export default function Hero() {
           const dx = nodeA.x - nodeB.x;
           const dy = nodeA.y - nodeB.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-
           if (dist < 150) {
+            ctx.globalAlpha = 1 - dist / 150;
             ctx.beginPath();
             ctx.moveTo(nodeA.x, nodeA.y);
             ctx.lineTo(nodeB.x, nodeB.y);
@@ -103,10 +103,9 @@ export default function Hero() {
           }
         });
       });
-
+      ctx.globalAlpha = 1;
       animationFrameId = requestAnimationFrame(draw);
     };
-
     draw();
 
     return () => {
@@ -115,10 +114,95 @@ export default function Hero() {
     };
   }, []);
 
+  // 3D Torus Knot via raw Three.js
+  useEffect(() => {
+    const container = threeCanvasRef.current;
+    if (!container) return;
+
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
+    } catch {
+      return;
+    }
+    if (!renderer.getContext()) { renderer.dispose(); return; }
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+    container.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 1000);
+    camera.position.set(0, 0, 40);
+
+    const geometry = new THREE.TorusKnotGeometry(10, 3, 128, 16);
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x00ffff,
+      wireframe: true,
+      emissive: new THREE.Color(0x00ffff),
+      emissiveIntensity: 0.4,
+    });
+    const torusKnot = new THREE.Mesh(geometry, material);
+    scene.add(torusKnot);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0x00ffff, 2, 100);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    window.addEventListener("mousemove", onMouseMove);
+
+    let frameId: number;
+    const animate = () => {
+      frameId = requestAnimationFrame(animate);
+      torusKnot.rotation.x += 0.003 + mouseY * 0.001;
+      torusKnot.rotation.y += 0.005 + mouseX * 0.001;
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    const handleResize = () => {
+      const nw = container.clientWidth;
+      const nh = container.clientHeight;
+      camera.aspect = nw / nh;
+      camera.updateProjectionMatrix();
+      renderer.setSize(nw, nh);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
+      renderer.dispose();
+      if (container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-40 mix-blend-screen" />
-      
+      {/* 3D Torus Knot background */}
+      <div
+        ref={threeCanvasRef}
+        className="absolute inset-0 z-0 pointer-events-none opacity-25"
+        style={{ width: "100%", height: "100%" }}
+      />
+
+      {/* Neural network canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-35 mix-blend-screen" />
+
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background z-0" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-12">
@@ -132,7 +216,7 @@ export default function Hero() {
             AGENT STATUS: ONLINE [{statuses[statusIdx]}]
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold font-sans tracking-tight mb-4 text-foreground glitch-text relative"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -160,18 +244,26 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <a href="#missions" className="px-6 py-3 bg-primary text-primary-foreground font-bold font-mono hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(0,255,255,0.4)] flex items-center gap-2 group">
+            <a
+              href="#missions"
+              data-testid="link-view-missions"
+              className="px-6 py-3 bg-primary text-primary-foreground font-bold font-mono hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(0,255,255,0.4)] flex items-center gap-2 group"
+            >
               <Terminal className="w-4 h-4 group-hover:rotate-90 transition-transform" />
               VIEW_MISSIONS
             </a>
-            <a href="#connect" className="px-6 py-3 border border-primary text-primary font-bold font-mono hover:bg-primary/10 transition-all flex items-center gap-2">
+            <a
+              href="#connect"
+              data-testid="link-connect"
+              className="px-6 py-3 border border-primary text-primary font-bold font-mono hover:bg-primary/10 transition-all flex items-center gap-2"
+            >
               INTERFACE_CONNECT
             </a>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-border pt-8">
             {stats.map((stat, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -195,7 +287,11 @@ export default function Hero() {
           <div className="absolute inset-0 border-2 border-primary rounded-full animate-[spin_10s_linear_infinite] border-t-transparent opacity-50" />
           <div className="absolute inset-2 border border-secondary rounded-full animate-[spin_15s_linear_infinite_reverse] border-b-transparent opacity-30" />
           <div className="absolute inset-4 overflow-hidden rounded-full border-4 border-background bg-card shadow-[0_0_30px_rgba(0,255,255,0.2)]">
-            <img src={portraitImg} alt="Mohan Sriram Kunamsetty" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            <img
+              src={portraitImg}
+              alt="Mohan Sriram Kunamsetty"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+            />
           </div>
         </motion.div>
       </div>
