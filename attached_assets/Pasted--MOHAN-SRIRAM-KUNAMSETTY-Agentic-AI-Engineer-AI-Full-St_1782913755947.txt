@@ -1,0 +1,124 @@
+# MOHAN SRIRAM KUNAMSETTY
+### Agentic AI Engineer | AI Full-Stack Developer
+
+Ongole, Andhra Pradesh, India | mohansriramkunamsetty@gmail.com | +91 6302342821
+[LinkedIn](https://www.linkedin.com/in/mohan-sriram-kunamsetty-28a3b336a/) · [GitHub](https://github.com/SriRamkunamsetty)
+
+---
+
+## Summary
+
+B.Tech Computer Science (Data Science) student and co-founder of two incubated AI ventures, building end-to-end agentic AI systems across computer vision, multi-agent workflows, and full-stack web/mobile applications. Architected **SITA 2.0**, a YOLOv8/ByteTrack/EasyOCR-based civic traffic intelligence platform with a filed patent and an IEEE publication. Ranked **AIR #13 in India** (pre-final, pending approval for AIR #1) in the AMD AI Engage Student Program. Builds with Gemini/Google GenAI, FastAPI, React/TypeScript, Docker, Kotlin, and Flutter, with hands-on coursework spanning LLM security, RAG, multi-agent systems, and GPU optimization for inference.
+
+---
+
+## Technical Skills
+
+- **Languages:** Python, TypeScript, JavaScript, Kotlin, Dart, SQL
+- **AI / Agentic Systems:** Gemini API, Google GenAI SDK, multi-agent orchestration, prompt engineering, RAG, LLM token/cost optimization, agent skills, RL with LLMs
+- **Computer Vision:** YOLOv8, ByteTrack, OCR (EasyOCR), real-time video analytics, object detection/tracking
+- **Backend:** FastAPI, Flask, Express, REST APIs, Docker, Docker Compose, Redis Streams
+- **Frontend:** React, TypeScript, Vite, Tailwind CSS, Radix UI/shadcn-style components, Recharts
+- **Data & Cloud:** Firebase, Supabase, PostgreSQL, MongoDB, AWS, Google Cloud (Cloud Run, Cloud Tasks, GCS)
+- **Mobile/IoT:** Kotlin (Android, Jetpack), Flutter/Dart, Hive, ESP32 IoT integration
+- **Security:** Penetration testing fundamentals, Kali Linux, LLM security (CLLMSP-certified), APK reverse engineering, container image scanning
+- **DevOps:** Git/GitHub Actions, CI/CD, Terraform, Ansible, Kubernetes, Linux shell scripting
+
+---
+
+## Flagship Projects
+
+### SITA 2.0 — AI Civic Traffic Intelligence Platform
+*Patent filed · IEEE-published*
+- Engineered a real-time traffic intelligence system using **YOLOv8** for vehicle/object detection, **ByteTrack** for multi-object tracking, and **EasyOCR** for license plate recognition, deployed via Dockerized, event-driven backend services with a React dashboard for live monitoring.
+- Co-authored an IEEE publication (8 QISCET-affiliated authors) and led the patent application currently under review with the Indian Patent Office, drawing conceptual framing from the Ramayanam.
+- Processed `[NEEDS INPUT]` video frames/streams with `[NEEDS INPUT]`% detection accuracy at `[NEEDS INPUT]` FPS.
+
+### PromptIQ — LLM Token & Cost Optimization Tool
+- Built a TypeScript/React tool addressing LLM API cost inefficiency through prompt compression, redundant-context removal, and token-usage analytics, integrated with Google GenAI workflows.
+- Designed a 233-file production-style frontend with Radix UI components, Vite build tooling, and Tailwind CSS, reducing `[NEEDS INPUT]` token usage by `[NEEDS INPUT]`% in test scenarios.
+
+### RAKSHAK v4 / Cyber Defense Platform — AI Cybersecurity Intelligence System
+- Developed a defense-oriented cybersecurity platform integrating a **MITRE ATT&CK** detection engine, **UEBA** behavioral analytics, **SOAR**-style automated playbooks, and dual-mode logging for the ET AI Hackathon 2026 (Round 2 qualifier), building on a prior v3.2 baseline.
+- Built an agentic AI backend for automated malware analysis, APK reverse engineering, and fraud-risk scoring of malicious Android applications targeting financial systems, with AWS S3/Google Cloud Storage and Cloud Tasks integration for scalable artifact processing.
+
+### Samvaad AI — Gemini-Powered Sales Intelligence Platform
+- Built an AI sales outreach platform using the **Gemini API** to generate personalized, explainable persuasion-driven messaging, with a Firebase/Supabase-backed TypeScript frontend.
+- Implemented adaptive persuasion scoring and a component-driven UI (Radix UI, React Hook Form) across 120+ source files.
+
+### Vana AI — Offline-First Kotlin Survival Intelligence App
+- Engineered an Android application providing offline AI-assisted guidance for disconnected/wilderness environments, integrating local model reasoning (Gemma-based) without requiring network connectivity.
+- Designed sensor-aware, offline-first Kotlin architecture across 36 source files with dedicated test coverage.
+
+### JusticeTrack — AI Court Judgment to Government Action Plan System
+- Built a civic-tech platform converting court judgments into structured government action plans for the **Karnataka Government Hackathon 2026**, using a React/TypeScript frontend with role-based workflows.
+
+---
+
+## Additional Projects
+
+**Traffic-Sign-Detection** — Python/Docker computer vision, temporal validation, compliance analysis
+**parksmart-dashboard** — YOLO-based smart parking occupancy system, React/Vite + Python backend
+**Gandharva** — AI music analysis: instrument recognition, note transcription, Supabase
+**Smart_Election_System-GCP** — Gemini + Google Maps civic election guidance platform
+**TALENTVERSE-AI** — AI candidate-job matching beyond keyword search
+**LEXGUARD** — adversarial multi-agent contract/legal risk analysis system
+**RecipeVala** — offline-first Flutter meal planner with Hive persistence
+**PetPulse SmartCare** — Flutter + Firebase + ESP32 IoT smart pet feeder, GENESIS PILOT-incubated
+
+---
+
+## Experience / Leadership
+
+**Campus Mantri (Official Representative), GeeksforGeeks** — QIS College of Engineering and Technology
+*June 2026 – Present*
+- Serve as the primary liaison between GeeksforGeeks and the student community, organizing campus-level technical events and driving platform engagement for a six-month tenure.
+
+**Google Student Ambassador** — QIS College of Engineering and Technology
+- Represent Google's developer programs on campus, producing outreach content and driving student participation in Google learning initiatives.
+
+**Co-Founder — SITA 2.0 & PetPulse SmartCare** *(MeitY Startup Hub / GENESIS PILOT-incubated)*
+- Co-founded two government-incubated AI ventures: SITA 2.0 (AI traffic surveillance, patent-pending) and PetPulse SmartCare (AI-powered IoT smart pet feeder), under the MeitY Startup Hub GENESIS PILOT program.
+
+---
+
+## Internships
+
+**EduSkills / AICTE Virtual Internship — DevOps & Cloud Automation** | *April – June 2026 (10 weeks)*
+- Completed a structured curriculum covering Docker, Kubernetes, Terraform, Ansible, CI/CD with GitHub Actions, container security, and SRE principles, culminating in a capstone microservice deployment.
+
+**EduSkills / AICTE Virtual Internship — Ethical Hacking (Telugu)** | *June – August 2026 (8 weeks)*
+- Covered Kali Linux, penetration testing methodology, social engineering defense, malware analysis, and web application vulnerability assessment with a hands-on capstone project.
+
+**VedUpskilling — AI with Python, Training & Internship** | *December 2025 – February 2026*
+- Completed AI/Python-focused training and internship with hands-on project work; received a Letter of Recommendation citing strong problem-solving and teamwork.
+
+**Infosys Springboard Virtual Internship 7.0 — Selected** | *May 2026*
+- Selected after completing prerequisite coursework and a video-proctored assessment; commencement pending batch allocation.
+
+---
+
+## Certifications
+
+- Certified LLM Security Professional (CLLMSP), Red Team Leaders — June 2026
+- AI Engineer for Data Scientists Associate & AI Engineer for Developers Associate, DataCamp — May/June 2026
+- Google AI Essentials & Google Prompting Essentials Specializations (9 courses), Coursera — May 2026
+- AMD AI Academy — 15+ courses: RAG, multi-agent systems, RL with LLMs, Triton kernel development, Kubernetes on AMD GPUs, vLLM/MI300X inference, quantization, GPU optimization — May/June 2026
+- AWS Fundamentals of Machine Learning and AI — November 2025
+- Deloitte Cyber Job Simulation (Forage) — October 2025
+- Anthropic — Introduction to Agent Skills
+
+---
+
+## Achievements
+
+- **AIR #13 in India**, AMD AI Engage Student Program (ByteXL x QIS College) — pre-final ranking among Top 100 students nationally; pending final approval with a projected path to AIR #1.
+- Qualified for **Round 2, ET AI Hackathon 2026**, with RAKSHAK v4 cybersecurity platform submission.
+
+---
+
+## Education
+
+**B.Tech, Computer Science and Engineering (Data Science)**
+QIS College of Engineering and Technology (QISCET), Ongole, Andhra Pradesh
+2024 – 2028 (R23 batch)
