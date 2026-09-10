@@ -3,13 +3,15 @@ import { motion, useInView } from "framer-motion";
 import ieeeImg from "@assets/ieee_summer_of_code_rank1_1789022952971.jpg";
 import amdImg from "@assets/bytexl__qiscollege__amd__aiacademy__aiengage__art_1782913771955.jpg";
 import scalerImg from "@assets/ChatGPT_Image_Jul_1,_2026,_12_52_34_PM_1782913771954.png";
-import gfgImg from "@assets/ChatGPT_Image_Jul_1,_2026,_12_39_49_PM_1782913771956.png";
+import promptwarsGlobalImg from "@assets/promptwars_global_top100_card.jpg";
+import jntukImg from "@assets/jntuk_young_entrepreneur_award.jpg";
 
 const recognitions = [
   { title: "RANK #1", subtitle: "IEEE Summer of Code 2026", img: ieeeImg, badge: "RANK #1 NATIONAL", org: "IEEE National Open-Source Fellowship", stat: "Final Round | 1,000+ Devs | 100+ Projects" },
   { title: "AIR #13", subtitle: "AMD AI Engage India", img: amdImg, badge: "AIR #13 INDIA", org: "AMD x ByteXL x QISCET", stat: "Top 100 | National Recognition" },
-  { title: "TOP 6", subtitle: "Scaler/Google ASCENT PromptWars", img: scalerImg, badge: "TOP 6 INDIA", org: "Scaler + Google", stat: "Thousands of Participants | Tier 1,2,3" },
-  { title: "TOP 100", subtitle: "PromptWars Virtual — Google for Developers", img: gfgImg, badge: "TOP 100 GLOBAL", org: "Google for Developers x Hack2Skill", stat: "Challenge 3 | 46,000+ Global Participants" },
+  { title: "TOP 6", subtitle: "Scaler / Google ASCENT PromptWars", img: scalerImg, badge: "TOP 6 INDIA", org: "Scaler + Google", stat: "Thousands of Participants | National" },
+  { title: "TOP 100", subtitle: "PromptWars Virtual — Google for Developers", img: promptwarsGlobalImg, badge: "TOP 100 GLOBAL", org: "Google for Developers × Hack2Skill", stat: "Challenge 3 | 46,000+ Global Participants" },
+  { title: "AWARD", subtitle: "Young Entrepreneur Award — JNTUK", img: jntukImg, badge: "JNTUK RECOGNIZED", org: "Jawaharlal Nehru Technological Univ.", stat: "Innovation · Leadership · Entrepreneurship" },
 ];
 
 function HoloCard({ rec, idx }: { rec: typeof recognitions[0]; idx: number }) {
@@ -152,7 +154,7 @@ export default function Recognitions() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 items-start">
         {recognitions.map((rec, idx) => <HoloCard key={idx} rec={rec} idx={idx} />)}
       </div>
     </div>
