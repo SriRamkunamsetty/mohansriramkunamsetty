@@ -62,8 +62,9 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="#"
-            className="px-4 py-2 text-sm font-mono border border-primary text-primary hover:bg-primary hover:text-background transition-all"
+            href="/Mohan_Sriram_Kunamsetty_Resume.pdf"
+            download="Mohan_Sriram_Kunamsetty_Resume.pdf"
+            className="px-4 py-2 text-sm font-mono border border-primary text-primary hover:bg-primary hover:text-background transition-all flex items-center gap-2"
           >
             [ DOWNLOAD_RESUME ]
           </a>
