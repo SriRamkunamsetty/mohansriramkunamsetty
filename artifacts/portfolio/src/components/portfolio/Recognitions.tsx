@@ -1,13 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import ieeeImg from "@assets/ieee_summer_of_code_rank1_1789022952971.jpg";
 import amdImg from "@assets/bytexl__qiscollege__amd__aiacademy__aiengage__art_1782913771955.jpg";
 import scalerImg from "@assets/ChatGPT_Image_Jul_1,_2026,_12_52_34_PM_1782913771954.png";
 import gfgImg from "@assets/ChatGPT_Image_Jul_1,_2026,_12_39_49_PM_1782913771956.png";
 
 const recognitions = [
+  { title: "RANK #1", subtitle: "IEEE Summer of Code 2026", img: ieeeImg, badge: "RANK #1 NATIONAL", org: "IEEE National Open-Source Fellowship", stat: "Final Round | 1,000+ Devs | 100+ Projects" },
   { title: "AIR #13", subtitle: "AMD AI Engage India", img: amdImg, badge: "AIR #13 INDIA", org: "AMD x ByteXL x QISCET", stat: "Top 100 | National Recognition" },
   { title: "TOP 6", subtitle: "Scaler/Google ASCENT PromptWars", img: scalerImg, badge: "TOP 6 INDIA", org: "Scaler + Google", stat: "Thousands of Participants | Tier 1,2,3" },
-  { title: "CAMPUS MANTRI", subtitle: "Official GFG Representative", img: gfgImg, badge: "CAMPUS MANTRI", org: "GeeksforGeeks", stat: "QISCET | June 2026" },
+  { title: "TOP 100", subtitle: "PromptWars Virtual — Google for Developers", img: gfgImg, badge: "TOP 100 GLOBAL", org: "Google for Developers x Hack2Skill", stat: "Challenge 3 | 46,000+ Global Participants" },
 ];
 
 function HoloCard({ rec, idx }: { rec: typeof recognitions[0]; idx: number }) {
@@ -110,11 +112,47 @@ export default function Recognitions() {
   const ref = useRef(null);
   return (
     <div className="max-w-7xl mx-auto px-6 py-12" ref={ref}>
-      <div className="mb-20 border-l-2 border-primary pl-4">
+      <div className="mb-12 border-l-2 border-primary pl-4">
         <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight uppercase">AGENT_ACHIEVEMENTS</h2>
         <p className="text-primary font-mono mt-2">SYS.RECOGNITION.VERIFIED</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+      {/* IEEE #1 Hero Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-14 relative overflow-hidden border-2 border-yellow-400/60 bg-gradient-to-r from-yellow-900/20 via-yellow-800/10 to-black p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-[0_0_40px_rgba(234,179,8,0.2)]"
+      >
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="scan-line absolute left-0 right-0 h-px bg-yellow-400/40" style={{ animation: "scanline 4s linear infinite" }} />
+        </div>
+        <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-yellow-400/70" />
+        <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-yellow-400/70" />
+        <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-yellow-400/70" />
+        <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-yellow-400/70" />
+
+        <div className="text-6xl md:text-8xl font-black font-mono text-yellow-400 leading-none drop-shadow-[0_0_20px_rgba(234,179,8,0.8)] shrink-0">
+          #1
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <div className="text-yellow-400 font-mono text-xs tracking-widest mb-1 uppercase">IEEE National Open-Source Fellowship</div>
+          <div className="text-white font-bold text-2xl md:text-3xl mb-2">IEEE Summer of Code 2026</div>
+          <div className="text-yellow-300/80 font-mono text-sm mb-3">RANK #1 · SELECTED IN FINAL ROUND · NATIONAL</div>
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start text-xs font-mono text-yellow-400/80">
+            <span>🏆 100+ PROJECTS NATIONWIDE</span>
+            <span>👥 1,000+ DEVELOPERS</span>
+            <span>⏱ 12 WEEKS OF IMPACT</span>
+            <span>🌍 REAL-WORLD CONTRIBUTION</span>
+          </div>
+        </div>
+        <div className="text-right shrink-0">
+          <div className="font-mono text-xs text-yellow-400/70 mb-1">SILENT WORK.</div>
+          <div className="font-bold text-yellow-400 text-lg">GLOBAL RECOGNITION.</div>
+        </div>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
         {recognitions.map((rec, idx) => <HoloCard key={idx} rec={rec} idx={idx} />)}
       </div>
     </div>

@@ -4,37 +4,47 @@ const timeline = [
   {
     role: "GeeksforGeeks Campus Mantri",
     period: "June 2026 – Present",
-    desc: "Leading technical community initiatives and representing GfG."
+    desc: "Official liaison between GeeksforGeeks and the student community; organize technical events and drive platform engagement campus-wide at QISCET."
+  },
+  {
+    role: "HackerRank Campus Crew Member",
+    period: "Aug 2026 – Present",
+    desc: "Selected after a competitive interview round to lead coding-community initiatives and spread HackerRank's mission across QISCET campus."
   },
   {
     role: "Google Student Ambassador",
     period: "QIS College",
-    desc: "Facilitating Google developer programs on campus."
+    desc: "Facilitating Google developer programs on campus, producing outreach content and driving student participation in Google learning initiatives."
   },
   {
-    role: "Co-Founder",
+    role: "Co-Founder — SITA 2.0 & PetPulse SmartCare",
     period: "MeitY GENESIS PILOT Incubated",
-    desc: "SITA 2.0 and PetPulse SmartCare startups incubated by MeitY."
+    desc: "Co-founded two government-incubated AI ventures: SITA 2.0 (patent-filed AI traffic surveillance) and PetPulse SmartCare (AI-powered IoT smart pet feeder), under MeitY Startup Hub GENESIS PILOT."
   },
   {
-    role: "DevOps and Cloud Trainee",
-    period: "April – June 2026",
-    desc: "EduSkills/AICTE 10-week extensive training program."
+    role: "Infosys Springboard Virtual Internship 7.0",
+    period: "May 2026 – Present",
+    desc: "Selected for prestigious technical development program; ongoing structured curriculum."
   },
   {
-    role: "Ethical Hacking Trainee",
-    period: "June – August 2026",
-    desc: "EduSkills/AICTE 8-week cybersecurity focus."
+    role: "EduSkills / AICTE — Ethical Hacking",
+    period: "Jun – Aug 2026 (Completed)",
+    desc: "8-week cybersecurity program covering Kali Linux, penetration testing methodology, social engineering defense, malware analysis, and web vulnerability assessment."
   },
   {
-    role: "AI with Python",
+    role: "EduSkills / AICTE — DevOps & Cloud Automation",
+    period: "Apr – Jun 2026 (Completed)",
+    desc: "10-week curriculum: Docker, Kubernetes, Terraform, Ansible, CI/CD with GitHub Actions, culminating in a capstone microservice deployment."
+  },
+  {
+    role: "SkillDzire / AICTE — Web Development & Cloud",
+    period: "May – Jun 2026 (Completed)",
+    desc: "AICTE-affiliated internship covering web development and cloud integration fundamentals."
+  },
+  {
+    role: "VedUpskilling — AI with Python",
     period: "Dec 2025 – Feb 2026",
-    desc: "VedUpskilling comprehensive AI program."
-  },
-  {
-    role: "Infosys Springboard 7.0",
-    period: "Selected May 2026",
-    desc: "Selected for prestigious technical development program."
+    desc: "AI/Python training and internship with hands-on project work; Letter of Recommendation received."
   }
 ];
 

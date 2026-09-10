@@ -7,47 +7,47 @@ const categories = [
   {
     title: "Languages",
     icon: <Code2 className="w-5 h-5" />,
-    skills: ["Python", "TypeScript", "JavaScript", "Kotlin", "Dart", "SQL"],
+    skills: ["Python", "TypeScript", "JavaScript", "Kotlin", "Dart", "SQL", "Java"],
   },
   {
     title: "AI / Agentic",
     icon: <BrainCircuit className="w-5 h-5" />,
-    skills: ["Gemini API", "Google GenAI SDK", "Multi-agent Orchestration", "Prompt Engineering", "RAG", "LLM Optimization", "RL with LLMs"],
+    skills: ["Gemini API", "Google GenAI SDK", "LangChain", "Ollama", "Multi-agent Orchestration", "Prompt Engineering", "RAG Pipelines", "LLM Optimization", "RL with LLMs", "Agent Skills"],
   },
   {
-    title: "Computer Vision",
+    title: "Computer Vision & ML",
     icon: <Cpu className="w-5 h-5" />,
-    skills: ["YOLOv8", "ByteTrack", "EasyOCR", "Real-time Video Analytics"],
+    skills: ["YOLOv8", "ByteTrack", "EasyOCR", "OpenCV", "PyTorch", "GNN/GCN Threat Graphs", "IsolationForest", "Real-time Video Analytics"],
   },
   {
     title: "Backend",
     icon: <Server className="w-5 h-5" />,
-    skills: ["FastAPI", "Flask", "Express", "Docker", "Redis Streams"],
+    skills: ["FastAPI", "Flask", "Express", "WebSockets", "REST APIs", "Docker", "Redis Streams"],
   },
   {
     title: "Frontend",
     icon: <Cpu className="w-5 h-5" />,
-    skills: ["React", "Vite", "Tailwind CSS", "Recharts"],
+    skills: ["React", "Next.js", "Vite", "Tailwind CSS", "Radix UI", "Recharts", "React Three Fiber"],
   },
   {
     title: "Cloud / Data",
     icon: <Database className="w-5 h-5" />,
-    skills: ["Firebase", "Supabase", "PostgreSQL", "MongoDB", "AWS", "Google Cloud"],
+    skills: ["Firebase", "Supabase", "PostgreSQL", "MongoDB", "AWS", "Google Cloud", "SQLite WAL"],
   },
   {
     title: "Mobile / IoT",
     icon: <Smartphone className="w-5 h-5" />,
-    skills: ["Kotlin/Android", "Flutter/Dart", "ESP32 IoT"],
+    skills: ["Kotlin/Android/Jetpack", "Flutter/Dart", "ESP32 IoT", "Offline-first Architecture"],
   },
   {
-    title: "Security",
+    title: "Cybersecurity",
     icon: <ShieldAlert className="w-5 h-5" />,
-    skills: ["Kali Linux", "Penetration Testing", "LLM Security", "APK Reverse Engineering"],
+    skills: ["Kali Linux", "Penetration Testing", "LLM Security (CLLMSP)", "MITRE ATT&CK (700+ TTPs)", "SOAR Playbooks", "UEBA", "APK Reverse Engineering"],
   },
   {
-    title: "DevOps",
+    title: "DevOps / SRE",
     icon: <GitBranch className="w-5 h-5" />,
-    skills: ["GitHub Actions", "Terraform", "Ansible", "Kubernetes", "CI/CD"],
+    skills: ["GitHub Actions CI/CD", "Terraform", "Ansible", "Kubernetes", "Docker Compose", "SRE Fundamentals"],
   },
 ];
 

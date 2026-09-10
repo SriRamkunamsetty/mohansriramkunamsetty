@@ -5,10 +5,10 @@ import { Terminal } from "lucide-react";
 import * as THREE from "three";
 
 const stats = [
-  { value: 6, suffix: "+", label: "Projects Filed for Patent" },
-  { value: 2, suffix: "", label: "Incubated Startups" },
-  { value: 13, prefix: "AIR ", label: "India AMD AI Engage" },
-  { value: 6, prefix: "Top ", label: "India Scaler/Google ASCENT" },
+  { value: 1, prefix: "IEEE #", suffix: "", label: "Summer of Code 2026" },
+  { value: 13, prefix: "AIR ", suffix: "", label: "India AMD AI Engage" },
+  { value: 2, suffix: "", label: "MeitY Incubated Startups" },
+  { value: 50, suffix: "+", label: "Certifications" },
 ];
 
 function AnimatedCounter({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
@@ -41,7 +41,7 @@ export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const threeCanvasRef = useRef<HTMLDivElement>(null);
   const [statusIdx, setStatusIdx] = useState(0);
-  const statuses = ["THINKING...", "PLANNING...", "EXECUTING...", "DEPLOYING..."];
+  const statuses = ["THINKING...", "PLANNING...", "EXECUTING...", "DEPLOYING...", "INNOVATING..."];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -235,7 +235,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Agentic AI Engineer · AI Full-Stack Developer · Autonomous Systems Builder
+            Agentic AI Engineer · Oracle Certified AI Foundations Associate · IEEE Summer of Code #1
           </motion.p>
 
           <motion.div

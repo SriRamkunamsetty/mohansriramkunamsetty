@@ -6,44 +6,58 @@ const missions = [
   {
     id: "M01",
     title: "SITA 2.0 — AI Civic Traffic Intelligence",
-    status: "PATENT PENDING | IEEE PUBLISHED",
+    status: "PATENT FILED | IEEE PUBLISHED",
     tech: "YOLOv8, ByteTrack, EasyOCR, Docker, React",
-    description: "Real-time traffic intelligence platform. Dockerized event-driven backend with a React dashboard. Co-authored IEEE publication. Patent currently under review with the Indian Patent Office."
+    description: "Real-time traffic-intelligence platform with YOLOv8 detection, ByteTrack multi-object tracking, and EasyOCR license-plate recognition across Dockerized event-driven microservices with a live React dashboard. 5-phase security audit conducted. Indian patent filed, IEEE publication co-authored. MeitY GENESIS PILOT-incubated."
   },
   {
     id: "M02",
-    title: "PromptIQ — LLM Token & Cost Optimization",
-    status: "DEPLOYED",
-    tech: "TypeScript, React, Google GenAI",
-    description: "Production tool for prompt compression, redundant-context removal, and token analytics. Integrates with Google GenAI workflows. Scaled to a 233-file production frontend."
+    title: "RAKSHAK v6 — AI Cybersecurity Intelligence",
+    status: "INDIA AI IMPACT FESTIVAL 2026",
+    tech: "MITRE ATT&CK, GNN/PyTorch, UEBA, RAG, SOAR, NVD CVE",
+    description: "Defense-oriented SOC platform with MITRE ATT&CK mapping (700+ techniques), GNN threat graphs (PyTorch), UEBA behavioral analytics, RAG-based threat intel, SOAR playbooks, and a SHA-256 hash-chained audit ledger. Live NVD CVE feed, IsolationForest/FFT beaconing detection, and 5-agent SOC orchestration. Submitted to India AI Impact Festival 2026 & ET AI Hackathon 2026."
   },
   {
     id: "M03",
-    title: "RAKSHAK v4 — Cyber Defense Platform",
-    status: "ET AI HACKATHON 2026",
-    tech: "MITRE ATT&CK, UEBA, SOAR, AWS S3, GCP",
-    description: "Behavioral analytics and SOAR-style playbooks mapped to the MITRE ATT&CK engine. Qualified for Round 2 of ET AI Hackathon 2026."
+    title: "CampusOS — Multi-Agent Campus Operations",
+    status: "byteXL AGENT FORGE | AMD MI300X TRACK",
+    tech: "Ollama Llama 3.1:8B, LangChain RAG, SQLite WAL, APScheduler, pytest",
+    description: "Four-agent autonomous backend (canteen, timetable, hostel grievance, security/curfew) with Ollama Llama 3.1:8B, LangChain RAG, SQLite WAL for high concurrency, APScheduler SLA escalation. Backed by a 51-test pytest suite and CI pipeline. Submitted to byteXL Agent Forge Hackathon, AMD MI300X Track."
   },
   {
     id: "M04",
-    title: "Samvaad AI — Gemini Sales Intelligence",
-    status: "COMPLETED",
-    tech: "Gemini API, Firebase, Supabase",
-    description: "Sales intelligence agent featuring adaptive persuasion scoring. Over 120+ source files in the production repository."
+    title: "PromptIQ — LLM Token & Cost Optimization",
+    status: "DEPLOYED | 230+ SOURCE FILES",
+    tech: "TypeScript, React, Google GenAI SDK",
+    description: "Production tool for prompt compression, redundant-context removal, and token analytics integrated with Google GenAI SDK. Scaled to a 230+ file production frontend with Radix UI and Tailwind CSS."
   },
   {
     id: "M05",
-    title: "Vana AI — Offline Survival Intelligence",
-    status: "MOBILE DEPLOYED",
-    tech: "Android/Kotlin, Gemma Local",
-    description: "Offline-first survival intelligence app using on-device Gemma reasoning. Sensor-aware operation without internet dependency."
+    title: "PetPulse SmartCare — AI IoT Smart Pet Feeder",
+    status: "PROVISIONAL PATENT FILED | MeitY INCUBATED",
+    tech: "ESP32, Flutter, Firebase, FastAPI, Next.js, React Three Fiber",
+    description: "IoT smart-feeding system with real-time telemetry, QR device pairing, biometric access lock, and a full Next.js/React Three Fiber marketing site. Provisional patent filed. MeitY GENESIS PILOT-incubated venture."
   },
   {
     id: "M06",
-    title: "JusticeTrack — Court Action Plan",
-    status: "KARNATAKA GOV HACKATHON",
-    tech: "React, TypeScript",
-    description: "Role-based workflows to streamline court-to-government action plans. Developed during the Karnataka Government Hackathon 2026."
+    title: "LEXGUARD — AI Contract & Legal Risk System",
+    status: "CLOUD RUN DEPLOYED",
+    tech: "Gemini API, Cloud Run, Multi-Agent, Google Cloud",
+    description: "Adversarial multi-agent system analyzing contracts and policy documents to surface exploitative clauses and legal risk. Deployed on Cloud Run with Gemini-based agent reasoning."
+  },
+  {
+    id: "M07",
+    title: "Samvaad AI — Gemini Sales Intelligence",
+    status: "500+ PROMPT GENERATIONS | <2s LATENCY",
+    tech: "Gemini API, Firebase, Supabase, React",
+    description: "AI sales platform supporting 500+ prompt generations with sub-2-second response latency using the Gemini API for personalized, explainable persuasion-driven messaging. 120+ source files."
+  },
+  {
+    id: "M08",
+    title: "Vana AI — Offline Survival Intelligence",
+    status: "MOBILE DEPLOYED",
+    tech: "Android/Kotlin, Gemma Local, Jetpack",
+    description: "Offline-first survival intelligence app using on-device Gemma reasoning. Sensor-aware operation without internet dependency. 36 source files with dedicated test coverage."
   }
 ];
 
@@ -59,7 +73,7 @@ export default function MissionLog() {
         <p className="text-primary font-mono mt-2">AGENT.TASKS.DISPATCHED</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {missions.map((mission, idx) => (
           <motion.div
             key={mission.id}

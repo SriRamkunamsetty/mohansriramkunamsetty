@@ -2,13 +2,16 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Award, BookOpen } from "lucide-react";
 
 const certs = [
-  "Certified LLM Security Professional (CLLMSP) — June 2026",
-  "AI Engineer for Data Scientists Associate, DataCamp",
-  "AI Engineer for Developers Associate, DataCamp",
-  "Google AI Essentials & Prompting Essentials (9 courses)",
-  "AMD AI Academy — 15+ courses (RAG, Triton, vLLM, etc.)",
-  "AWS Fundamentals of Machine Learning and AI",
-  "Deloitte Cyber Job Simulation (Forage)",
+  "Oracle Certified Agentic AI Foundations Associate — Oracle University (Jul 2026)",
+  "Certified LLM Security Professional (CLLMSP) — Red Team Leaders (Jun 2026)",
+  "Google Cloud Gen AI Academy APAC 2026 — Google Cloud × Hack2Skill (Jul 2026)",
+  "AI Engineer for Developers Associate — DataCamp (Jun 2026)",
+  "AI Engineer for Data Scientists Associate — DataCamp (May 2026)",
+  "Google AI Essentials & Prompting Essentials — 9 courses, Coursera (May 2026)",
+  "AMD AI Academy — 15+ courses: RAG, Triton, vLLM/MI300X, Kubernetes on AMD GPUs",
+  "AWS Fundamentals of Machine Learning and AI — Amazon (Nov 2025)",
+  "Career Essentials in GitHub Professional Certificate — LinkedIn/GitHub (Nov 2025)",
+  "Deloitte Cyber Job Simulation — Forage (Oct 2025)",
   "Anthropic — Introduction to Agent Skills"
 ];
 
@@ -20,12 +23,12 @@ export default function Credentials() {
           <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight uppercase text-foreground">
             AGENT_CREDENTIALS
           </h2>
-          <p className="text-primary font-mono mt-2">SYS.CERTIFICATIONS.VALIDATED</p>
+          <p className="text-primary font-mono mt-2">SYS.CERTIFICATIONS.VALIDATED — 50+ TOTAL</p>
         </div>
         <ShieldCheck className="text-primary w-12 h-12 opacity-50" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {certs.map((cert, idx) => (
           <motion.div
             key={idx}
@@ -37,9 +40,11 @@ export default function Credentials() {
           >
             <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-bl from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
-            {idx === 0 || idx === 6 ? (
+            {idx === 0 ? (
+              <Award className="w-8 h-8 text-yellow-400 group-hover:text-primary transition-colors" />
+            ) : idx === 1 || idx === 7 ? (
               <ShieldCheck className="w-8 h-8 text-secondary group-hover:text-primary transition-colors" />
-            ) : idx === 1 || idx === 2 ? (
+            ) : idx === 2 ? (
               <Award className="w-8 h-8 text-secondary group-hover:text-primary transition-colors" />
             ) : (
               <BookOpen className="w-8 h-8 text-secondary group-hover:text-primary transition-colors" />
